@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berlitz - Prueba tu Inglés</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="banner-container">
+        
+        <!-- SLIDE 1: Hook -->
+        <div class="slide active" id="slide-1">
+            <div class="berlitz-logo">
+                <svg width="120" height="30" viewBox="0 0 120 30" fill="none">
+                    <text x="0" y="20" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#003DA5">Berlitz</text>
+                </svg>
+            </div>
+            <div class="content">
+                <h1 class="headline">
+                    ¿Crees que puedes<br>
+                    <span class="highlight">cerrar el trato</span><br>
+                    en inglés?
+                </h1>
+                <p class="subheadline">Tu pronunciación puede costar millones</p>
+                <button class="cta-button" onclick="goToSlide(2)">
+                    Haz la prueba
+                    <span class="arrow">→</span>
+                </button>
+            </div>
+            <div class="slide-indicator">1/4</div>
+        </div>
+
+        <!-- SLIDE 2: Reto -->
+        <div class="slide" id="slide-2">
+            <div class="berlitz-logo-small">Berlitz</div>
+            <div class="content">
+                <h2 class="challenge-title">Lee esta frase en voz alta:</h2>
+                <div class="phrase-box">
+                    <p class="target-phrase" id="target-phrase">
+                        "We need to leverage our synergies to maximize ROI"
+                    </p>
+                </div>
+                <div class="instructions">
+                    <p>Presiona el micrófono y lee la frase</p>
+                </div>
+                <button class="mic-button" id="mic-button" onclick="startListening()">
+                    <svg class="mic-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                        <line x1="12" y1="19" x2="12" y2="23"></line>
+                        <line x1="8" y1="23" x2="16" y2="23"></line>
+                    </svg>
+                    <span>Grabar</span>
+                </button>
+                <button class="fallback-button" onclick="simulateScore()">
+                    ¿No funciona el micrófono? Simular resultado
+                </button>
+            </div>
+            <div class="slide-indicator">2/4</div>
+        </div>
+
+        <!-- SLIDE 3: Análisis -->
+        <div class="slide" id="slide-3">
+            <div class="content centered">
+                <div class="analyzing-animation">
+                    <div class="sound-wave">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <h2 class="analyzing-text">Analizando tu<br>pronunciación...</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: Resultado -->
+        <div class="slide" id="slide-4">
+            <div class="berlitz-logo-small">Berlitz</div>
+            <div class="content centered">
+                <div class="result-container">
+                    <div class="score-circle" id="score-circle">
+                        <span class="score-number" id="score-display">0</span>
+                        <span class="score-symbol">%</span>
+                    </div>
+                    <h2 class="result-title" id="result-title">Probabilidad de cerrar<br>el negocio</h2>
+                    <p class="result-message" id="result-message">
+                        Con esa pronunciación, pierdes credibilidad frente a clientes internacionales.
+                    </p>
+                    <div class="cta-final">
+                        <h3>No te arriesgues.</h3>
+                        <a href="#" class="cta-button-final" id="clickTag" onclick="handleClickTag()">
+                            Domina el idioma de los negocios
+                            <span class="arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-indicator">4/4</div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
