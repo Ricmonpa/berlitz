@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berlitz - Prueba tu Inglés</title>
+    <title>Berlitz - Diagnóstico Completo de Inglés</title>
+    
+    <!-- DV360/CM360 Metadata -->
+    <meta name="ad.size" content="width=300,height=600">
+    <meta name="Ad_Type" content="Rich Media - HTML5">
+    <meta name="Requires_ClickTag" content="Yes">
+    <meta name="Requires_Microphone" content="Yes">
+    
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +19,7 @@
 <body>
     <div class="banner-container">
         
-        <!-- SLIDE 1: Hook -->
+        <!-- SLIDE 1: Hook inicial -->
         <div class="slide active" id="slide-1">
             <div class="berlitz-logo">
                 <svg width="120" height="30" viewBox="0 0 120 30" fill="none">
@@ -31,23 +38,25 @@
                     <span class="arrow">→</span>
                 </button>
             </div>
-            <div class="slide-indicator">1/4</div>
+            <div class="slide-indicator">1/7</div>
         </div>
 
-        <!-- SLIDE 2: Reto -->
+        <!-- SLIDE 2: Frase 1 - Nivel Básico -->
         <div class="slide" id="slide-2">
             <div class="berlitz-logo-small">Berlitz</div>
             <div class="content">
+                <div class="progress-indicator">Frase 1 de 3</div>
                 <h2 class="challenge-title">Lee esta frase en voz alta:</h2>
                 <div class="phrase-box">
-                    <p class="target-phrase" id="target-phrase">
-                        "We need to leverage our synergies to maximize ROI"
+                    <p class="target-phrase" id="target-phrase-1">
+                        "We need to schedule a meeting for next Monday"
                     </p>
+                    <div class="difficulty-badge basic">Nivel Básico</div>
                 </div>
                 <div class="instructions">
                     <p>Presiona el micrófono y lee la frase</p>
                 </div>
-                <button class="mic-button" id="mic-button" onclick="startListening()">
+                <button class="mic-button" id="mic-button-1" onclick="startListening(1)">
                     <svg class="mic-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                         <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
                         <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
@@ -56,15 +65,83 @@
                     </svg>
                     <span>Grabar</span>
                 </button>
-                <button class="fallback-button" onclick="simulateScore()">
+                <button class="fallback-button" onclick="simulateScore(1)">
                     ¿No funciona el micrófono? Simular resultado
                 </button>
             </div>
-            <div class="slide-indicator">2/4</div>
+            <div class="slide-indicator">2/7</div>
         </div>
 
-        <!-- SLIDE 3: Análisis -->
+        <!-- SLIDE 3: Frase 2 - Nivel Intermedio -->
         <div class="slide" id="slide-3">
+            <div class="berlitz-logo-small">Berlitz</div>
+            <div class="content">
+                <div class="progress-indicator">Frase 2 de 3</div>
+                <h2 class="challenge-title">Lee esta frase en voz alta:</h2>
+                <div class="phrase-box">
+                    <p class="target-phrase" id="target-phrase-2">
+                        "We need to leverage our synergies to maximize ROI"
+                    </p>
+                    <div class="difficulty-badge intermediate">Nivel Intermedio</div>
+                </div>
+                <div class="instructions">
+                    <p>Presiona el micrófono y lee la frase</p>
+                </div>
+                <button class="mic-button" id="mic-button-2" onclick="startListening(2)">
+                    <svg class="mic-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                        <line x1="12" y1="19" x2="12" y2="23"></line>
+                        <line x1="8" y1="23" x2="16" y2="23"></line>
+                    </svg>
+                    <span>Grabar</span>
+                </button>
+                <button class="fallback-button" onclick="simulateScore(2)">
+                    ¿No funciona el micrófono? Simular resultado
+                </button>
+                <button class="skip-button" onclick="skipToForm()">
+                    Saltar diagnóstico
+                </button>
+            </div>
+            <div class="slide-indicator">3/7</div>
+        </div>
+
+        <!-- SLIDE 4: Frase 3 - Nivel Avanzado -->
+        <div class="slide" id="slide-4">
+            <div class="berlitz-logo-small">Berlitz</div>
+            <div class="content">
+                <div class="progress-indicator">Frase 3 de 3</div>
+                <h2 class="challenge-title">Lee esta frase en voz alta:</h2>
+                <div class="phrase-box">
+                    <p class="target-phrase" id="target-phrase-3">
+                        "Our Q4 projections indicate significant EBITDA growth despite macroeconomic headwinds"
+                    </p>
+                    <div class="difficulty-badge advanced">Nivel Avanzado</div>
+                </div>
+                <div class="instructions">
+                    <p>Presiona el micrófono y lee la frase</p>
+                </div>
+                <button class="mic-button" id="mic-button-3" onclick="startListening(3)">
+                    <svg class="mic-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                        <line x1="12" y1="19" x2="12" y2="23"></line>
+                        <line x1="8" y1="23" x2="16" y2="23"></line>
+                    </svg>
+                    <span>Grabar</span>
+                </button>
+                <button class="fallback-button" onclick="simulateScore(3)">
+                    ¿No funciona el micrófono? Simular resultado
+                </button>
+                <button class="skip-button" onclick="skipToForm()">
+                    Saltar diagnóstico
+                </button>
+            </div>
+            <div class="slide-indicator">4/7</div>
+        </div>
+
+        <!-- SLIDE: Análisis (reutilizable entre frases - no cuenta en numeración) -->
+        <div class="slide" id="slide-analysis">
             <div class="content centered">
                 <div class="analyzing-animation">
                     <div class="sound-wave">
@@ -79,29 +156,109 @@
             </div>
         </div>
 
-        <!-- SLIDE 4: Resultado -->
-        <div class="slide" id="slide-4">
+        <!-- SLIDE 5: Resultados parciales -->
+        <div class="slide" id="slide-5">
             <div class="berlitz-logo-small">Berlitz</div>
             <div class="content centered">
                 <div class="result-container">
-                    <div class="score-circle" id="score-circle">
-                        <span class="score-number" id="score-display">0</span>
+                    <div class="score-circle score-medium" id="score-circle-partial">
+                        <span class="score-number" id="score-display-partial">0</span>
                         <span class="score-symbol">%</span>
                     </div>
-                    <h2 class="result-title" id="result-title">Probabilidad de cerrar<br>el negocio</h2>
-                    <p class="result-message" id="result-message">
-                        Con esa pronunciación, pierdes credibilidad frente a clientes internacionales.
+                    <h2 class="result-title">Has completado 3 de 3 frases</h2>
+                    <p class="result-message" id="result-message-partial">
+                        Tu nivel preliminar: <strong id="preliminary-score">0</strong>%
+                    </p>
+                    <p class="teaser-text">
+                        ¿Quieres el análisis completo con recomendaciones personalizadas?
+                    </p>
+                    <button class="cta-button" onclick="goToSlide(6)">
+                        Sí, quiero mi diagnóstico GRATIS
+                        <span class="arrow">→</span>
+                    </button>
+                </div>
+            </div>
+            <div class="slide-indicator">5/7</div>
+        </div>
+
+        <!-- SLIDE 6: Formulario de captura -->
+        <div class="slide" id="slide-6">
+            <div class="berlitz-logo-small">Berlitz</div>
+            <div class="content">
+                <h2 class="form-title">Recibe tu diagnóstico completo</h2>
+                <p class="form-subtitle">Completa tus datos para obtener recomendaciones personalizadas</p>
+                <form class="lead-form" id="lead-form" onsubmit="handleFormSubmit(event); return false;">
+                    <div class="form-group">
+                        <label for="nombre">Nombre *</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono *</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="empresa">Empresa (opcional)</label>
+                        <input type="text" id="empresa" name="empresa">
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="acepto" name="acepto" required>
+                        <label for="acepto">Acepto recibir información de Berlitz *</label>
+                    </div>
+                    <button type="submit" class="cta-button form-submit">
+                        Ver mi diagnóstico completo
+                        <span class="arrow">→</span>
+                    </button>
+                </form>
+            </div>
+            <div class="slide-indicator">6/7</div>
+        </div>
+
+        <!-- SLIDE 7: Resultados finales -->
+        <div class="slide" id="slide-7">
+            <div class="berlitz-logo-small">Berlitz</div>
+            <div class="content centered">
+                <div class="result-container">
+                    <h2 class="personalized-greeting" id="personalized-greeting">
+                        Hola, basado en tu evaluación...
+                    </h2>
+                    <div class="score-circle" id="score-circle-final">
+                        <span class="score-number" id="score-display-final">0</span>
+                        <span class="score-symbol">%</span>
+                    </div>
+                    <h2 class="result-title" id="result-title-final">Tu nivel de inglés</h2>
+                    
+                    <!-- Desglose de scores -->
+                    <div class="score-breakdown">
+                        <div class="breakdown-item">
+                            <span class="breakdown-label">Nivel Básico:</span>
+                            <span class="breakdown-value" id="score-basic">0%</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label">Nivel Intermedio:</span>
+                            <span class="breakdown-value" id="score-intermediate">0%</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label">Nivel Avanzado:</span>
+                            <span class="breakdown-value" id="score-advanced">0%</span>
+                        </div>
+                    </div>
+
+                    <p class="result-message" id="result-message-final">
+                        Mensaje personalizado según score
                     </p>
                     <div class="cta-final">
-                        <h3>No te arriesgues.</h3>
-                        <a href="#" class="cta-button-final" id="clickTag" onclick="handleClickTag()">
-                            Domina el idioma de los negocios
+                        <a href="#" class="cta-button-final" onclick="handleClickTag()">
+                            Agenda tu prueba de nivel GRATIS
                             <span class="arrow">→</span>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="slide-indicator">4/4</div>
+            <div class="slide-indicator">7/7</div>
         </div>
 
     </div>
